@@ -7,12 +7,13 @@ namespace WeatherApi.Services
     {
         private readonly HttpClient _httpClient;
         private readonly IMemoryCache _cache;
-        private readonly string _apiKey = "914e47d66cefdeee0a9804890c07b83d"; // 👈 記得改成你申請的API KEY！
+        private readonly string _apiKey;
 
-        public WeatherService(IMemoryCache cache)
+        public WeatherService(IMemoryCache cache, IConfiguration configuration)
         {
             _httpClient = new HttpClient();
             _cache = cache;
+            _apiKey = configuration["WeatherApi:ApiKey"] ?? throw new ArgumentNullException("API key is missing"); // 從 appsettings 或環境變數讀取
         }
 
         public async Task<object> GetWeatherAsync(string city)

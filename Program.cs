@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen(c =>
 // 其他註冊...
 builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<WeatherService>();
 builder.Services.AddScoped<WeatherService>();
 
 var app = builder.Build();
