@@ -30,5 +30,5 @@ This is a side project for learning backend development, API integration, and ca
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/你的帳號/weather-api-dotnet.git
+git clone https://github.com/jamiewu1124/weather-api-dotnet.git
 cd weather-api-dotnet
